@@ -3,44 +3,39 @@ package com.pwm.aws.crud.lambda.api.model;
 import com.google.gson.Gson;
 
 public class Product {
-	private int id;
 	private String name;
-	private double price;
+	private String email;
+	private String phone;
+	private String message;
 	
-	public Product(int id, String name, double price) {
-		this.id = id;
+	public Product(String name, String email, String phone, String message) {
 		this.name = name;
-		this.price = price;
+		this.email = email;
+		this.phone = phone;
+		this.message = message;
 	}
 	
 	public Product(String json) {
 		Gson gson = new Gson();
 		Product tempProduct = gson.fromJson(json, Product.class);
-		this.id = tempProduct.id;
 		this.name = tempProduct.name;
-		this.price = tempProduct.price;
+		this.email = tempProduct.email;
+		this.phone = tempProduct.phone;
+		this.message = tempProduct.message;
 	}
 	public String toString() {
 		return new Gson().toJson(this);
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public double getPrice() {
-		return price;
+	public String getEmail(){
+		return email;
 	}
-	public void setPrice(double price) {
-		this.price = price;
-	}
-	
-
+	public String getPhone(){ return phone;}
+	public String getMessage(){ return message;}
 }
