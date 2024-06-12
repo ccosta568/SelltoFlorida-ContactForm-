@@ -122,7 +122,7 @@ public class ProductLambdaHandler implements RequestStreamHandler {
     private void sendEmailWithAttachment(Product product) {
         final String fromEmail = "selltoflorida@selltoflorida.com"; // requires valid email id
         final String PwEmail = "chriscosta@live.com";
-        final String password = "al5fPovIpqENxPl!"; // correct password for email id
+        final String password = "(**replace**)"; // correct password for email id
         final String toEmail = "costachristopher90@gmail.com";
         System.out.println("Sending email to: " + toEmail);
 
