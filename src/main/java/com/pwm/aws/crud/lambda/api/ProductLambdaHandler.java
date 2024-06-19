@@ -113,7 +113,8 @@ public class ProductLambdaHandler implements RequestStreamHandler {
 
     private JSONObject getCorsHeaders() {
         JSONObject headers = new JSONObject();
-        headers.put("Access-Control-Allow-Origin", "https://selltoflorida.com");
+        headers.put("Access-Control-Allow-Origin", "http://localhost:4200");
+     //   headers.put("Access-Control-Allow-Origin", "https://selltoflorida.com");
         headers.put("Access-Control-Allow-Methods", "OPTIONS, POST, PUT");
         headers.put("Access-Control-Allow-Headers", "Content-Type");
         return headers;

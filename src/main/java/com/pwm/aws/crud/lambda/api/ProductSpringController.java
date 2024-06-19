@@ -6,27 +6,43 @@ import com.pwm.aws.crud.lambda.api.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/api/products")
 public class ProductSpringController {
 
     @Autowired
-    private DBService dbService; // A service to handle DynamoDB interactions
+    private ProductRepository productRepository;
 
-    @PostMapping
-    public ResponseEntity<String> saveProduct(@RequestBody Product product) {
-        try {
-            dbService.saveProduct(product, "Products");
-            return ResponseEntity.ok("New Contact Registered");
-        } catch (AmazonClientException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error: " + e.getMessage());
-        }
+    @GetMapping
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
     }
 
-    // Additional endpoints if needed
+    @PostMapping
+    public Product createProduct(@RequestBody Product product) {
+        return productRepository.save(product);
+    }
+
+    @GetMapping("/{name}")
+    public Product getProductByName(@PathVariable String name) {
+        return productRepository.findById(name).orElse(null);
+    }
+
+    @PutMapping("/{name}")
+    public Product updateProduct(@PathVariable String name, @RequestBody Product productDetails) {
+        Product product = productRepository.findById(name).orElse(null);
+        product.setEmail(productDetails.getEmail());
+        product.setPhone(productDetails.getPhone());
+        product.setMessage(productDetails.getMessage());
+        return productRepository.save(product);
+    }
+
+    @DeleteMapping("/{name}")
+    public void deleteProduct(@PathVariable String name) {
+        productRepository.deleteById(name);
+    }
 }
