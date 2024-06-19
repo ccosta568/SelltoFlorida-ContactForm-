@@ -1,4 +1,8 @@
 C:\Users\costa\PostAWSFinal\src\main\java\com\pwm\aws\crud\lambda\api\model\Product.java
-C:\Users\costa\PostAWSFinal\src\main\java\Test\ProductTest.java
+C:\Users\costa\PostAWSFinal\src\main\java\com\pwm\aws\crud\lambda\api\ProductRepository.java
+C:\Users\costa\PostAWSFinal\src\main\java\com\pwm\aws\crud\lambda\api\model\DBService.java
+C:\Users\costa\PostAWSFinal\src\main\java\com\pwm\aws\crud\lambda\api\ProductSpringController.java
+C:\Users\costa\PostAWSFinal\src\main\java\com\pwm\aws\crud\lambda\api\config\DBConfig.java
 C:\Users\costa\PostAWSFinal\src\main\java\com\pwm\aws\crud\lambda\api\ProductLambdaHandler.java
 C:\Users\costa\PostAWSFinal\src\main\java\com\pwm\aws\crud\lambda\api\Server.java
+C:\Users\costa\PostAWSFinal\src\main\java\com\pwm\aws\crud\lambda\api\config\WebConfig.java
