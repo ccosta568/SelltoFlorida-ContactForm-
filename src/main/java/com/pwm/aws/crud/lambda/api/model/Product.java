@@ -13,6 +13,7 @@ public class Product {
 	private String message;
 
 
+
 	public Product(String name, String email, String phone, String message) {
 		this.name = name;
 		this.email = email;
