@@ -1,4 +1,4 @@
-package com.pwm.aws.crud.lambda.api;
+package com.pwm.aws.crud.lambda.api.Controller;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;

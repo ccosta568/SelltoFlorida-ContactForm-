@@ -1,4 +1,4 @@
-package com.pwm.aws.crud.lambda.api;
+package com.pwm.aws.crud.lambda.api.Repository;
 
 import com.pwm.aws.crud.lambda.api.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
