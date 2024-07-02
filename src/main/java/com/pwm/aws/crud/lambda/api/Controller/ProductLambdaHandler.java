@@ -22,6 +22,8 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.logging.Logger;
 
+
+/**
 public class ProductLambdaHandler implements RequestStreamHandler {
 
     private String DYNAMO_TABLE = "Products";
@@ -183,6 +185,7 @@ public class ProductLambdaHandler implements RequestStreamHandler {
         }
     }
 }
+ **/
 
 
 

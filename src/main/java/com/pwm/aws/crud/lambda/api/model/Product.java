@@ -2,17 +2,27 @@ package com.pwm.aws.crud.lambda.api.model;
 
 import com.google.gson.Gson;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 
 @Entity
+@Table(name = "contacts")
 public class Product {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	@Column(name = "name")
 	private String name;
+	@Column(name = "email")
 	private String email;
+	@Column(name = "phone")
 	private String phone;
+	@Column(name = "message")
 	private String message;
 
-
+	// Default constructor
+	public Product() {
+	}
 
 	public Product(String name, String email, String phone, String message) {
 		this.name = name;
@@ -30,8 +40,12 @@ public class Product {
 		this.message = tempProduct.message;
 	}
 
-	public String toString() {
-		return new Gson().toJson(this);
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -66,4 +80,14 @@ public class Product {
 		this.message = message;
 	}
 
+	@Override
+	public String toString() {
+		return "Product{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", email='" + email + '\'' +
+				", phone='" + phone + '\'' +
+				", message='" + message + '\'' +
+				'}';
+	}
 }
